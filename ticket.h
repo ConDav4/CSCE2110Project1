@@ -1,20 +1,28 @@
-#ifndef TICKET_H
-#define TICKET_H
-#include "date.h"
-#include <string>
+#include "ticket.h"
+#include "address.h"
 using namespace std;
 
-class Ticket {
-    private:
-        Date issueDate;
-        string location;
-    public:
-        Ticket();
-        Ticket(Date d, string loc);
-        void setIssueDate(Date d);
-        Date getIssueDate() const;
-        void setLocation(string loc);
-        string getLocation() const;
-};
+Ticket::Ticket() {
+    location = "NULL";
+}
 
-#endif
+Ticket::Ticket(Date d, Address loc) {
+    issueDate = d;
+    location = loc;
+}
+
+void Ticket::setIssueDate(Date d) {
+    issueDate = d;
+}
+
+Date Ticket::getIssueDate() const {
+    return issueDate;
+}
+
+void Ticket::setLocation(Address loc) {
+    location = loc;
+}
+
+Address Ticket::getLocation() const {
+    return location;
+}
