@@ -1,40 +1,58 @@
-#include "driverlist.h"
+#include "address.h"
 using namespace std;
 
-DriverList::DriverList() {
-    head = nullptr;
-    tail = nullptr;
-    size = 0;
+Address::Address() {
+    street = "NULL";
+    city = "NULL";
+    county = "NULL";
+    state = "NULL";
+    zip = -1;
 }
 
-DriverList::~DriverList() {
-    //FIXME: Implement destructor
+Address::Address(string str, string ci, string co, string sta, int z) {
+    street = str;
+    city = ci;
+    county = co;
+    state = sta;
+    zip = z;
 }
 
-void DriverList::insertAtHead(Driver* d) {
-    //FIXME: Implement insert function
+void Address::setStreet(string str) {
+    street = str;
 }
 
-void DriverList::insertAtMiddle(Driver* d) {
-    //FIXME: Implement insert function
+string Address::getStreet() const {
+    return street;
 }
 
-void DriverList::insertAtTail(Driver* d) {
-    //FIXME: Implement insert function
+void Address::setCity(string ci) {
+    city = ci;
 }
 
-void DriverList::insertByCounty(Driver* d, string co) {
-    //FIXME: Implement insert function
+string Address::getCity() const {
+    return city;
 }
 
-void DriverList::deleteDriver(int driverID) {
-    //FIXME: Implement delete function
+void Address::setCounty(string co) {
+    county = co;
 }
 
-Driver* DriverList::searchDriver(int driverID) {
-    //FIXME: Implement search function
+string Address::getCounty() const {
+    return county;
 }
 
-void DriverList::printAll() const {
-    //FIXME: Implement print function
+void Address::setState(string sta) {
+    state = sta;
+}
+
+string Address::getState() const {
+    return state;
+}
+
+void Address::setZIP(int z) {
+    zip = z;
+}
+
+int Address::getZIP() const {
+    return zip;
 }
