@@ -3,8 +3,16 @@
 using namespace std;
 
 Driver::Driver() {
-    //FIXME: Configure constructor
+    driverID = "NULL";
+	name = "NULL";
+	experienceYears = -1;
+	dob= dob(-1,-1,-1);
+	address = NULL;
+	licesnseIssueData = NULL;
+	ticket = NULL;
+	hasTicket = false;
 }
+
 
 void Driver::setDriverID(string d) {
     driverID = d;
@@ -26,8 +34,8 @@ void Driver::setYearsExperience(int e) {
     experienceYears = e;
 }
 
-int Driver::getYearsExperience() const {
-    return experienceYears;
+Date Driver::getYearsExperience() const {
+	//Fixme: Add support for Years
 }
 
 void Driver::setDOB(Date d) {
@@ -70,7 +78,7 @@ bool Driver::getTicketStatus() const {
     return hasTicket;
 }
 
-Date Driver::getAge(Date dob) {
+Date Driver::getAge(Date dob, Date today) {
     //FIXME: Add age calculation
 }
 
