@@ -7,7 +7,7 @@ class MedicalDriver : public Driver {
     protected:
         string medicalCat;
     public:
-        //constructor?
+		MedicalDriver();
         void setMedicalCat(string m);
         string getMedicalCat() const;
 };

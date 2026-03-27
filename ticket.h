@@ -1,19 +1,20 @@
 #ifndef TICKET_H
 #define TICKET_H
 #include "date.h"
+#include "address.h"
 #include <string>
 using namespace std;
 
 class Ticket {
     private:
         Date issueDate;
-        string location;
+        Address location;
     public:
         Ticket();
-        Ticket(Date d, string loc);
+        Ticket(Date d, Address loc);
         void setIssueDate(Date d);
         Date getIssueDate() const;
-        void setLocation(string loc);
+        void setLocation(Address loc);
         string getLocation() const;
 };
 

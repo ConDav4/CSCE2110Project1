@@ -2,11 +2,11 @@
 using namespace std;
 
 Address::Address() {
-    street = "";
-    city = "";
-    county = "";
-    state = "";
-    zip = 0;
+    street = "NULL";
+    city = "NULL";
+    county = "NULL";
+    state = "NULL";
+    zip = -1;
 }
 
 Address::Address(string str, string ci, string co, string sta, int z) {
