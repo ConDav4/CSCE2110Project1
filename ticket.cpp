@@ -1,11 +1,12 @@
 #include "ticket.h"
+#include "address.h"
 using namespace std;
 
 Ticket::Ticket() {
-    location = "";
+    location = "NULL";
 }
 
-Ticket::Ticket(Date d, string loc) {
+Ticket::Ticket(Date d, Address loc) {
     issueDate = d;
     location = loc;
 }
@@ -18,10 +19,10 @@ Date Ticket::getIssueDate() const {
     return issueDate;
 }
 
-void Ticket::setLocation(string loc) {
+void Ticket::setLocation(Address loc) {
     location = loc;
 }
 
-string Ticket::getLocation() const {
+Address Ticket::getLocation() const {
     return location;
 }
