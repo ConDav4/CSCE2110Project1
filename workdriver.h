@@ -7,7 +7,9 @@ class WorkDriver : public Driver {
     protected:
         string workCat;
     public:
-        //constructor?
+        WorkDriver(){
+			workCat = "Null";
+		}
         void setWorkCat(string w);
         string getWorkCat() const;
 };
