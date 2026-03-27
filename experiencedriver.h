@@ -7,7 +7,7 @@ class ExperienceDriver : public Driver {
     protected:
         string expCat;
     public:
-        //constructor?
+		ExperienceDriver();
         void setExpCat(string e);
         string getExpCat() const;
 };
