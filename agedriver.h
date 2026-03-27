@@ -7,7 +7,7 @@ class AgeDriver : public Driver {
     protected:
         string ageCat;
     public:
-        //constructor?
+        AgeDriver();
         void setAgeCat(string a);
         string getAgeCat() const;
 };
