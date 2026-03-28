@@ -78,10 +78,39 @@ bool Driver::getTicketStatus() const {
     return hasTicket;
 }
 
-Date Driver::getAge(Date dob, Date today) {
-    //FIXME: Add age calculation
+Date Date::getAge(Date Today, Date dob){
+    int TDay = Today->getDay();
+    int TMonth = Today->getMonth();
+    int TYear = Today->getYear();
+    int dobDay = dob->getDay();
+    int dobMonth = dob->getMonth();
+    int dobYear = dob->getYear();
+    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (TDay < dobDay){
+        TDay += daysInMonth[dobMonth-1];
+        dobMonth--;
+    }
+    if (dobMonth<TMonth){
+        TMonth += 12;
+        TYear--;
+    }
+    int ageDay = TDay - dobDay;
+    int ageMonth = TMonth - dobMonth;
+    int ageYear = TYear - dobYear;
+    Date age(ageDay, ageMonth, ageYear);
+    return age;
 }
 
 void Driver::displayDriver() const {
-    //FIXME: Add driver print statements
+	cout<<"Driver ID = "<<driverID<<endl;
+	cout<<"Name = "<<name<<endl;
+	cout<<"experienceYears = "<<experienceYears<<endl;
+	cout<<"Age = "<<getAge(Today, dob)<<endl;
+	cout<<"Address = "<<Address;
+	if(getTicketStatus()){
+		cout<<"Driver has previous ticket, here is last ticket:"<<endl;
+		cout<<ticket;
+	}else{
+		cout<<"Driver has no tickets."<<endl;
+	}
 }
