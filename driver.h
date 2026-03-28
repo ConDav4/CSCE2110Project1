@@ -9,8 +9,7 @@ using namespace std;
 class Driver {
     private:
         string driverID, name;
-        int experienceYears;
-        Date dob, licenseIssueDate;
+        Date dob, licenseIssueDate, experienceYears;
         Address address;
         Ticket ticket;
         bool hasTicket;
