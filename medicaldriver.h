@@ -8,6 +8,7 @@ class MedicalDriver : public Driver {
         string medicalCat;
     public:
 		MedicalDriver();
+		MedicalDriver(string m);
         void setMedicalCat(string m);
         string getMedicalCat() const;
 };
