@@ -36,3 +36,4 @@ void Date::setDay(int d) {
 int Date::getDay() const {
     return day;
 }
+
