@@ -17,6 +17,8 @@ class DriverList {
         void insertByCounty(Driver* d, string co);
         void deleteDriver(int driverID);
         Driver* searchDriver(int driverID);
+		Node* getHead() const;
+		int getSize() const;
         void printAll() const;
 };
 
