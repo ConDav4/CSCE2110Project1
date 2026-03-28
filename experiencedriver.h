@@ -8,6 +8,7 @@ class ExperienceDriver : public Driver {
         string expCat;
     public:
 		ExperienceDriver();
+		ExperienceDriver(string e);
         void setExpCat(string e);
         string getExpCat() const;
 };
