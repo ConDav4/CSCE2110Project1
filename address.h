@@ -21,5 +21,5 @@ class Address {
         void setZIP(int z);
         int getZIP() const;
 };
-
+ostream& operator<<(ostream& os, const Address& a);
 #endif
