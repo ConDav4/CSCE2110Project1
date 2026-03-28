@@ -14,7 +14,7 @@ class Ticket {
         void setIssueDate(Date d);
         Date getIssueDate() const;
         void setLocation(Address loc);
-        string getLocation() const;
+        Address getLocation() const;
 };
 
 #endif
