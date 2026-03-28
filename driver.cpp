@@ -30,12 +30,12 @@ string Driver::getName() const {
     return name;
 }
 
-void Driver::setYearsExperience(int e) {
+void Driver::setYearsExperience(Date e) {
     experienceYears = e;
 }
 
 Date Driver::getYearsExperience() const {
-	//Fixme: Add support for Years
+	return Date->getAge(Today, experienceYears);
 }
 
 void Driver::setDOB(Date d) {
