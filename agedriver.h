@@ -8,6 +8,7 @@ class AgeDriver : public Driver {
         string ageCat;
     public:
         AgeDriver();
+        AgeDriver(string a);
         void setAgeCat(string a);
         string getAgeCat() const;
 };
