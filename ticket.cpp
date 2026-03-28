@@ -2,10 +2,6 @@
 #include "address.h"
 using namespace std;
 
-Ticket::Ticket() {
-    location = "NULL";
-}
-
 Ticket::Ticket(Date d, Address loc) {
     issueDate = d;
     location = loc;
