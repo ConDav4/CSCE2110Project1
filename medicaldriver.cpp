@@ -4,6 +4,9 @@ using namespace std;
 MedicalDriver::MedicalDriver(){
 	medicalCat = "NULL";
 }
+MedicalDriver::MedicalDriver(string m){
+	medicalCat = m;
+}
 void MedicalDriver::setMedicalCat(string m) {
     medicalCat = m;
 }
