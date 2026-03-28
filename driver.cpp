@@ -35,7 +35,7 @@ void Driver::setYearsExperience(Date e) {
 }
 
 Date Driver::getYearsExperience() const {
-	return Date->getAge(Today, experienceYears);
+	return Date->getAge(Today, licenseIssueDate);
 }
 
 void Driver::setDOB(Date d) {
