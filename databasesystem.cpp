@@ -5,7 +5,7 @@ void DatabaseSystem::addDriver(Driver* d) {
     //FIXME: Implement add driver function
     string county = d->getAddress().getCounty();
     activeDrivers.insertByCounty(d, county);
-    indexTable.insert(d->getDriverID(), d);
+    indexTable.insert(d);
 }
 
 void DatabaseSystem::migrateDriver(int id) {
@@ -14,14 +14,17 @@ void DatabaseSystem::migrateDriver(int id) {
     if (d == nullptr) {
         cout << "Driver ID " << id << " not found." << endl;
         return;
+    }
 }
 
 Driver* DatabaseSystem::searchDriver(int id) const {
     //FIXME: Implement search function
     Driver* d = indexTable.search(id);
-    if (d == nullptr)
+    if (d == nullptr){
         cout << "Driver ID " << id << " not found." << endl;
+    }
     return d;
+
 }
 
 void DatabaseSystem::getRecentLicenses(int n) const {
