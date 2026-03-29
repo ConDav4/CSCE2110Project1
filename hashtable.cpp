@@ -11,7 +11,7 @@ HashTable::HashTable(int size) {
     }
 }
 
-int HashTable::hashFunction(int key) {
+int HashTable::hashFunction(int key) const {
     return key % capacity;
 }
 
@@ -24,7 +24,7 @@ void HashTable::insert(Driver* d) {
     table[index] = newNode;
 }
 
-Driver* HashTable::search(int key) {
+Driver* HashTable::search(int key) const {
     int index = hashFunction(key);
 
     Node* temp = table[index];
