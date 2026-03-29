@@ -276,7 +276,7 @@ int main() {
 	int numInput;
 	string wordInput;
 	bool running = true;
-
+	DatabaseSystem db;
 	do {
 		//menu loop
 		printMainMenu();
