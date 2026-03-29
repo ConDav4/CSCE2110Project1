@@ -8,13 +8,13 @@ using namespace std;
 class DatabaseSystem {
     private:
         DriverList activeDrivers, inactiveDrivers;
-        HashTable indexTable;
+        HashTable indexTable{100};
     public:
         void addDriver(Driver* d);
         void migrateDriver(int id);
         Driver* searchDriver(int id) const;
-        void getRecentLicenses(int n) const;
-        void getOldestLicenses(int n) const;
+		void getRecentLicenses(int n) const;
+		void getOldestLicenses(int n) const;
         void displayAllActive() const;
         void displayAllInactive() const;
 };
