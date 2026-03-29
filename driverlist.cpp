@@ -114,6 +114,32 @@ void DriverList::deleteDriver(int DriverID) {
 	}
 }
 
+void DriverList::printRecentN(int n) const {
+	Node* cur = tail;
+	int count = 0;
+	
+	while(cur && count < n) {
+		cout<<n<<": ";
+		cur->data->displayDriver();
+		cout<<endl;
+		cur = cur->prev;
+		count++;
+	}
+}
+
+void DriverList::printOldestN(int n) const {
+	Node* cur = head;
+	int count = 0;
+	
+	while (cur && count < n) {
+		cout<<n<<": ";
+		cur->data->displayDriver();
+		cout<<endl;
+		cur= cur->next;
+		count++;
+	}
+}
+
 Driver* DriverList::searchDriver(int DriverID) {
 	string id = to_string(DriverID);
 	Node* cur = head;
