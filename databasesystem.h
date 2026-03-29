@@ -15,6 +15,8 @@ class DatabaseSystem {
         Driver* searchDriver(int id) const;
         void getRecentLicenses(int n) const;
         void getOldestLicenses(int n) const;
+        void displayAllActive() const;
+        void displayAllInactive() const;
 };
 
 #endif
