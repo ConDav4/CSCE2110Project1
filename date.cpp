@@ -36,4 +36,29 @@ void Date::setDay(int d) {
 int Date::getDay() const {
     return day;
 }
-
+ostream& operator<<(ostream& os, const Date& d) {
+    os<<d.getMonth()<<"/"<<d.getDay()<<"/"<<d.getYear();
+    return os;
+}
+Date Date::getAge(Date Today, Date dob){
+    int TDay = current.getDay();
+    int TMonth = current.getMonth();
+    int TYear = current.getYear();
+    int dobDay = dob.getDay();
+    int dobMonth = dob.getMonth();
+    int dobYear = dob.getYear();
+    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (TDay < dobDay){
+        TDay += daysInMonth[TMonth - 1];
+        TMonth -= 1;
+    }
+    if (dobMonth > TMonth) {
+        TYear -= 1;
+        TMonth -+ 12;
+    }
+    int ageDay = Tday - dobDay;
+    int ageMonth = TMonth - dobMonth;
+    int ageYear = TYear - dobYear;
+    Dage age(ageDay, ageMonth, ageYear);
+    return age;
+}
