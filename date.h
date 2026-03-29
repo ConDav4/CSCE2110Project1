@@ -15,5 +15,5 @@ class Date {
         void setDay(int d);
         int getDay() const;
 };
-
+ostream& operator<<(ostream& os, const Date& d);
 #endif
