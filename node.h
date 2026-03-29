@@ -8,6 +8,7 @@ class Node {
         Node *next, *prev;
         Driver *data;
         Node(Driver* d);
+        Node();
 };
 
 #endif

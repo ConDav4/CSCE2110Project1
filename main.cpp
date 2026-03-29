@@ -5,7 +5,13 @@
 using namespace std;
 
 int main() {
-	
+	int numInput;
+	string wordInput;
+	bool running = true;
+
+	do {
+		//menu loop
+	} while (running);
 	
 	return 0;
 }

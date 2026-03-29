@@ -6,3 +6,9 @@ Node::Node(Driver* d) {
     next = nullptr;
     prev = nullptr;
 }
+
+Node::Node() {
+    data = nullptr;
+    next = nullptr;
+    prev = nullptr;
+}
