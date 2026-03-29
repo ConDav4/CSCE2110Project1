@@ -16,5 +16,5 @@ class Ticket {
         void setLocation(Address loc);
         Address getLocation() const;
 };
-
+ostream& operator<<(ostream& os, const Ticket& t);
 #endif
