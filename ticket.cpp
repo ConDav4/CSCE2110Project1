@@ -1,7 +1,10 @@
 #include "ticket.h"
 #include "address.h"
 using namespace std;
-
+Ticket::Ticket(){
+	issueDate=Date();
+	location=Address();
+}
 Ticket::Ticket(Date d, Address loc) {
     issueDate = d;
     location = loc;
