@@ -9,11 +9,11 @@ class HashTable {
     private:
         Node** table;
         int capacity;
-        int hashFunction(int key);
+        int hashFunction(int key) const;
     public:
         HashTable(int size);
         void insert(Driver* d);
-        Driver* search(int key);
+        Driver* search(int key) const;
         void remove(int key);
 };
 
