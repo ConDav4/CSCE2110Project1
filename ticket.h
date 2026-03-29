@@ -10,6 +10,7 @@ class Ticket {
         Date issueDate;
         Address location;
     public:
+		Ticket();
         Ticket(Date d, Address loc);
         void setIssueDate(Date d);
         Date getIssueDate() const;
