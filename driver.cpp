@@ -2,14 +2,16 @@
 #include <iostream>
 using namespace std;
 
+extern Date Today;
+
 Driver::Driver() {
     driverID = "NULL";
 	name = "NULL";
 	experienceYears = -1;
-	dob= dob(-1,-1,-1);
-	address = NULL;
-	licesnseIssueData = NULL;
-	ticket = NULL;
+	dob= Date(-1,-1,-1);
+	address  = Address();
+	licesnseIssueData = Date();
+	ticket = Ticket();
 	hasTicket = false;
 }
 
@@ -35,7 +37,7 @@ void Driver::setYearsExperience(Date e) {
 }
 
 Date Driver::getYearsExperience() const {
-	return Date->getAge(Today, licenseIssueDate);
+	return Date::getAge(Today, licenseIssueDate);
 }
 
 void Driver::setDOB(Date d) {
@@ -76,29 +78,6 @@ void Driver::setTicketStatus(bool t) {
 
 bool Driver::getTicketStatus() const {
     return hasTicket;
-}
-
-Date Date::getAge(Date Today, Date dob){
-    int TDay = Today->getDay();
-    int TMonth = Today->getMonth();
-    int TYear = Today->getYear();
-    int dobDay = dob->getDay();
-    int dobMonth = dob->getMonth();
-    int dobYear = dob->getYear();
-    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (TDay < dobDay){
-        TDay += daysInMonth[dobMonth-1];
-        dobMonth--;
-    }
-    if (dobMonth<TMonth){
-        TMonth += 12;
-        TYear--;
-    }
-    int ageDay = TDay - dobDay;
-    int ageMonth = TMonth - dobMonth;
-    int ageYear = TYear - dobYear;
-    Date age(ageDay, ageMonth, ageYear);
-    return age;
 }
 
 void Driver::displayDriver() const {
