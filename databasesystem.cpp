@@ -33,3 +33,13 @@ void DatabaseSystem::getOldestLicenses(int n) const {
     //FIXME: Implement get oldest function
     activeDrivers.printOldestN(n);
 }
+
+void DatabaseSystem::displayAllActive() const {
+    cout << "~~~ Active Drivers ~~~" << endl;
+    activeDrivers.printAll();
+}
+
+void DatabaseSystem::displayAllInactive() const {
+    cout << "~~~ Inactive Drivers ~~~" << endl;
+    inactiveDrivers.printAll();
+}
