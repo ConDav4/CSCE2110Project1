@@ -31,7 +31,6 @@ class Driver {
         Ticket getTicket() const;
         void setTicketStatus(bool t);
         bool getTicketStatus() const;
-        Date getAge(Date dob);
         void displayDriver() const;
 };
 
