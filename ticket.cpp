@@ -22,3 +22,8 @@ void Ticket::setLocation(Address loc) {
 Address Ticket::getLocation() const {
     return location;
 }
+ostream& operator<<(ostream& os, const Ticket& t) {
+    os<< "Issue Date: " <<t.getIssueDate() << endl;
+    os<< "Location: " <<t.getLocation();
+    return os;
+}
