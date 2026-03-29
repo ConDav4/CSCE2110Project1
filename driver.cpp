@@ -7,11 +7,11 @@ extern Date Today;
 Driver::Driver() {
     driverID = "NULL";
 	name = "NULL";
-	experienceYears = -1;
+	experienceYears = Date(-1, -1, -1);
 	dob= Date(-1,-1,-1);
 	address  = Address();
-	licesnseIssueData = Date();
-	ticket = Ticket();
+	licenseIssueDate = Date(-1,-1,-1);
+	ticket = Ticket(Date(-1,-1,-1), Address());
 	hasTicket = false;
 }
 
@@ -37,7 +37,7 @@ void Driver::setYearsExperience(Date e) {
 }
 
 Date Driver::getYearsExperience() const {
-	return Date::getAge(Today, licenseIssueDate);
+	return experienceYears;
 }
 
 void Driver::setDOB(Date d) {
@@ -85,7 +85,7 @@ void Driver::displayDriver() const {
 	cout<<"Name = "<<name<<endl;
 	cout<<"experienceYears = "<<experienceYears<<endl;
 	cout<<"Age = "<<getAge(Today, dob)<<endl;
-	cout<<"Address = "<<Address;
+	cout<<"Address = "<<address<<endl;
 	if(getTicketStatus()){
 		cout<<"Driver has previous ticket, here is last ticket:"<<endl;
 		cout<<ticket;
