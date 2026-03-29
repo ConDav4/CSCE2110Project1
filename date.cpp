@@ -1,4 +1,5 @@
 #include "date.h"
+#include <iostream>
 using namespace std;
 
 Date::Date() {
@@ -40,7 +41,7 @@ ostream& operator<<(ostream& os, const Date& d) {
     os<<d.getMonth()<<"/"<<d.getDay()<<"/"<<d.getYear();
     return os;
 }
-Date Date::getAge(Date Today, Date dob){
+Date getAge(Date current, Date dob){
     int TDay = current.getDay();
     int TMonth = current.getMonth();
     int TYear = current.getYear();
@@ -54,11 +55,8 @@ Date Date::getAge(Date Today, Date dob){
     }
     if (dobMonth > TMonth) {
         TYear -= 1;
-        TMonth -+ 12;
+        TMonth += 12;
     }
-    int ageDay = Tday - dobDay;
-    int ageMonth = TMonth - dobMonth;
-    int ageYear = TYear - dobYear;
-    Dage age(ageDay, ageMonth, ageYear);
+    Date age((TYear - dobYear), (TMonth - dobMonth), (TDay - dobDay));
     return age;
 }
