@@ -12,9 +12,9 @@ class DatabaseSystem {
     public:
         void addDriver(Driver* d);
         void migrateDriver(int id);
-        Driver* searchDriver(int id);
-        void getRecentLicenses(int n);
-        void getOldestLicenses(int n);
+        Driver* searchDriver(int id) const;
+        void getRecentLicenses(int n) const;
+        void getOldestLicenses(int n) const;
 };
 
 #endif
