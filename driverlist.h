@@ -16,6 +16,8 @@ class DriverList {
         void insertAtTail(Driver* d);
         void insertByCounty(Driver* d, string co);
         void deleteDriver(int driverID);
+		void printRecentN(int n) const;
+		void printOldestN(int n) const;
         Driver* searchDriver(int driverID);
 		Node* getHead() const;
 		int getSize() const;
