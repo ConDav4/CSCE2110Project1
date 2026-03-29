@@ -15,6 +15,10 @@ void DatabaseSystem::migrateDriver(int id) {
         cout << "Driver ID " << id << " not found." << endl;
         return;
     }
+	activeDrivers.deleteDriver(id);
+	inactiveDrivers.insertAtTail(d);
+	indexTable.remove(id);
+	cout<<"Driver ID: "<<id<<" has migrated to inactive."<<endl;
 }
 
 Driver* DatabaseSystem::searchDriver(int id) const {
@@ -27,14 +31,11 @@ Driver* DatabaseSystem::searchDriver(int id) const {
 
 }
 
-void DatabaseSystem::getRecentLicenses(int n) const {
-    //FIXME: Implement get recent function
-    activeDrivers.printRecentN(n);
+void DatabaseSystem::getRecentLicenses(int n) const{
+	activeDrivers.printRecentN(n);
 }
-
-void DatabaseSystem::getOldestLicenses(int n) const {
-    //FIXME: Implement get oldest function
-    activeDrivers.printOldestN(n);
+void DatabaseSystem::getOldestLicenses(int n) const{
+	activeDrivers.printOldestN(n);
 }
 
 void DatabaseSystem::displayAllActive() const {
