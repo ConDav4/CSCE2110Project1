@@ -42,24 +42,25 @@ void printMainMenu() {
 	cout << "       THE DATABASE (or whatever)       " << endl;
 	cout << "+--------------------------------------+" << endl;
 	cout << "1. Add driver" << endl;
-	cout << "2. Search for driver ID" << endl;
-	cout << "3. Migrate to inactive (ID)" << endl;
-	cout << "4. View recently issued" << endl;
-	cout << "5. View oldest issued" << endl;
-	cout << "6. Display active" << endl;
+	cout << "2. Import drivers from file" << endl;
+	cout << "3. Search for a driver by ID" << endl;
+	cout << "4. Migrate driver to inactive (by ID)" << endl;
+	cout << "5. View N most recently issued licenses" << endl;
+	cout << "6. View N oldest issued licenses" << endl;
+	cout << "7. Display all active drivers"
 	cout << "0. Exit" << endl;
 	cout << "+--------------------------------------+" << endl;
 	cout << "Enter choice: " << endl; 
 }
 
 void printAddDriverTypeMenu() {
-	cout << "\n~~~ Select Driver Category (placeholder names)~~~" << endl;
-	cout << "1. Age" << endl;
-	cout << "2. Work" << endl;
-	cout << "3. Experience" << endl;
-	cout << "4. Medical Con." << endl;
-	cout << "5. No category" << endl;
-	cout << "Enter choice: " << endl;
+	cout << "\n~~~ Select Driver Category ~~~" << endl;
+	cout << "1. Driver Age" << endl;
+	cout << "2. Work/Profession" << endl;
+	cout << "3. Driver experience" << endl;
+	cout << "4. Medical conditions" << endl;
+	cout << "5. No Category" << endl;
+	cout << "Enter Choice: " << endl;
 }
 
 // Read date from input
@@ -276,7 +277,7 @@ int main() {
 	int numInput;
 	string wordInput;
 	bool running = true;
-	DatabaseSystem db;
+
 	do {
 		//menu loop
 		printMainMenu();
