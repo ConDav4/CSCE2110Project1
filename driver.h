@@ -19,8 +19,8 @@ class Driver {
         string getDriverID() const;
         void setName(string n);
         string getName() const;
-        void setYearsExperience(int e);
-        int getYearsExperience() const;
+        void setYearsExperience(Date e);
+        Date getYearsExperience() const;
         void setDOB(Date d);
         Date getDOB() const;
         void setAddress(Address a);
