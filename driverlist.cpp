@@ -92,7 +92,7 @@ void DriverList::insertByCounty(Driver* d, string co) {
 }
 
 void DriverList::deleteDriver(int DriverID) {
-	string id = to_string(driverID);
+	string id = to_string(DriverID);
 	Node* cur = head;
 	while(cur) {
 		if (cur->data && cur->data->getDriverID() == id) {
@@ -114,8 +114,8 @@ void DriverList::deleteDriver(int DriverID) {
 	}
 }
 
-Driver* DriverList::searchDriver(int driverID) {
-	string id = to_string(driverID);
+Driver* DriverList::searchDriver(int DriverID) {
+	string id = to_string(DriverID);
 	Node* cur = head;
 	while(cur) {
 		if (cur->data && cur->data->getDriverID() == id) {
