@@ -279,6 +279,19 @@
 						getline(ss, licDay, '\t');
 						getline(ss, licMonth, '\t');
 						getline(ss, licYear, '\t');
+
+						string hasTicketStr;
+						string tDay, tMonth, tYear;
+						string tStreet, tCity, tCounty, tState, tZip;
+
+						getline(ss, hasTicketStr, '\t');
+						getline(ss, tDay, '\t');
+						getline(ss, tMonth, '\t');
+						getline(ss, tYear, '\t');
+						getline(ss, tCity, '\t');
+						getline(ss, tCounty, '\t');
+						getline(ss, tState, '\t');
+						getline(ss, tZip, '\t');
 						
 						int zipInt;
 						stringstream(zip) >> zipInt;
@@ -301,6 +314,24 @@
 						d->setDOB(dob);
 						d->setYearsExperience(Date::getAge(Today, lic));
 						d->setLicenseIssueDate(lic);
+						db.addDriver(d);
+						++count;
+
+						int hasTicketInt;
+						stringstream(hasTicketStr) >> hasTicketInt;
+						if (hasTicketStr == 1) {
+							int tD, tM, tY, tZ;
+							stringstream(tDay) >> tD;
+							stringstream(tMonth) >> tM;
+							stringstream(tYear) >> tY;
+							stringstream(tZip) >> tZ;
+							Date ticketDate(tD, tM, tY);
+							Address ticketLoc(tStreet, tCity, tCounty, tState, tZ);
+							Ticket tk(ticketDate, ticketLoc);
+							d->setTicketStatus(true);
+						} else {
+							d->setTicketStatus(false);
+						}
 						db.addDriver(d);
 						++count;
 					}
