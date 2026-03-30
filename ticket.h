@@ -16,6 +16,7 @@ class Ticket {
         Date getIssueDate() const;
         void setLocation(Address loc);
         Address getLocation() const;
+        ostream& operator<<(ostream& os, const Ticket& t);
 };
-ostream& operator<<(ostream& os, const Ticket& t);
+
 #endif

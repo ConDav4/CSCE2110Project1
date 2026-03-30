@@ -1,6 +1,7 @@
 #ifndef DATE_H
 #define DATE_H
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class Date {
@@ -15,7 +16,8 @@ class Date {
         int getMonth() const;
         void setDay(int d);
         int getDay() const;
+        ostream& operator<<(ostream& os, const Date& d);
+        Date getAge(Date Today, Date dob);
 };
-ostream& operator<<(ostream& os, const Date& d);
-Date getAge(Date Today, Date dob);
+
 #endif

@@ -2,8 +2,8 @@
 #include "address.h"
 using namespace std;
 Ticket::Ticket(){
-	issueDate=Date();
-	location=Address();
+	issueDate = Date();
+	location = Address();
 }
 Ticket::Ticket(Date d, Address loc) {
     issueDate = d;
@@ -25,7 +25,8 @@ void Ticket::setLocation(Address loc) {
 Address Ticket::getLocation() const {
     return location;
 }
-ostream& operator<<(ostream& os, const Ticket& t) {
+
+ostream& Ticket::operator<<(ostream& os, const Ticket& t) {
     os<< "Issue Date: " <<t.getIssueDate() << endl;
     os<< "Location: " <<t.getLocation();
     return os;

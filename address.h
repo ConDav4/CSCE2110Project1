@@ -1,6 +1,7 @@
 #ifndef ADDRESS_H
 #define ADDRESS_H
 #include <string>
+#include <fstream>
 using namespace std;
 
 class Address {
@@ -20,6 +21,7 @@ class Address {
         string getState() const;
         void setZIP(int z);
         int getZIP() const;
+        ostream& operator<<(ostream& os, const Address& a);
 };
-ostream& operator<<(ostream& os, const Address& a);
+
 #endif
