@@ -299,7 +299,7 @@
 						d->setName(name);
 						d->setAddress(addr);
 						d->setDOB(dob);
-						d->setYearsExperience(getAge(Today, lic));
+						d->setYearsExperience(lic.getAge(Today, lic));
 						d->setLicenseIssueDate(lic);
 						db.addDriver(d);
 						++count;
@@ -352,13 +352,7 @@
 				// Display all
 				case 7: {
 					cout << "\n~~~ All Active Drivers ~~~" << endl;
-					for (int id = 1001; id <= 1010; id++) {
-						Driver* d = db.searchDriver(id);
-						if (d) {
-							d->displayDriver();
-							cout << "~~~~~~~~~~~~~~~~~~~~" << endl;
-						}
-					}
+					db.displayAllActive();
 					break;
 				}
 				// Exit
