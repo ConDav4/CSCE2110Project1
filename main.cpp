@@ -329,6 +329,7 @@
 							Date ticketDate(tD, tM, tY);
 							Address ticketLoc(tStreet, tCity, tCounty, tState, tZ);
 							Ticket tk(ticketDate, ticketLoc);
+							d->setTicket(tk);
 							d->setTicketStatus(true);
 						} else {
 							d->setTicketStatus(false);
