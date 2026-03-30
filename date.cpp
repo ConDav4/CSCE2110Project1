@@ -37,7 +37,7 @@ int Date::getDay() const {
     return day;
 }
 
-ostream& operator<<(ostream& os, const Date& d) {
+ostream& Date::operator<<(ostream& os, const Date& d) {
     os<<d.month<<"/"<<d.day<<"/"<<d.year;
     return os;
 }
