@@ -1,6 +1,6 @@
 all: GroupProject
 CXX = g++
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -std=c++11
 
 GroupProject: date.o driver.o driverlist.o experiencedriver.o hashtable.o main.o medicaldriver.o node.o ticket.o workdriver.o address.o agedriver.o databasesystem.o
 	$(CXX) $(CFLAGS) -o GroupProject date.o driver.o driverlist.o experiencedriver.o hashtable.o main.o medicaldriver.o node.o ticket.o workdriver.o address.o agedriver.o databasesystem.o
