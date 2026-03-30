@@ -288,6 +288,7 @@
 						getline(ss, tDay, '\t');
 						getline(ss, tMonth, '\t');
 						getline(ss, tYear, '\t');
+						getline(ss, tSteet, '\t');
 						getline(ss, tCity, '\t');
 						getline(ss, tCounty, '\t');
 						getline(ss, tState, '\t');
