@@ -1,171 +1,95 @@
-#include "driverlist.h"
+#include "driver.h"
 #include <iostream>
-#include <string>
 using namespace std;
 
-DriverList::DriverList(){
-	head = nullptr;
-	tail = nullptr;
-	size = 0;
-}
-DriverList::~DriverList(){
-	Node* cur = head;
-	while(cur) {
-		Node* next = cur->next;
-		delete cur;
-		cur = next;
-	}
+extern Date Today;
+
+Driver::Driver() {
+    driverID = "NULL";
+	name = "NULL";
+	experienceYears = Date(-1,-1,-1);
+	dob= Date(-1,-1,-1);
+	address  = Address();
+	licenseIssueDate = Date();
+	ticket = Ticket();
+	hasTicket = false;
 }
 
-void DriverList::insertAtHead(Driver* d){
-	Node* n = new Node(d);
-	if(!head){
-		head = tail = n;
-	} else {
-		n->next = head;
-		head->prev = n;
-		head = n;
-	}
-	++size;
+
+void Driver::setDriverID(string d) {
+    driverID = d;
 }
 
-void DriverList::insertAtTail(Driver* d) {
-	Node* n = new Node(d);
-	if(!tail) {
-		head = tail = n;
-	} else {
-		tail->next = n;
-		n->prev = tail;
-		tail = n;
-	}
-	++size;
+string Driver::getDriverID() const {
+    return driverID;
 }
 
-void DriverList::insertAtMiddle(Driver* d) {
-	if(!head || !head->next) {
-		insertAtTail(d);
-		return;
-	}
-	int mid = size / 2;
-	Node* cur = head;
-	for(int i=0; i<mid && cur; ++i) {
-		cur = cur->next;
-	}
-	if(!cur){
-		insertAtTail(d);
-		return;
-	}
-	Node* n = new Node(d);
-	n->next = cur->next;
-	n->prev = cur;
-	if(cur->next) cur->next->prev = n;
-	cur->next = n;
-	if (cur == tail) {
-		tail = n;
-	}
-	++size;
+void Driver::setName(string n) {
+    name = n;
 }
 
-void DriverList::insertByCounty(Driver* d, string co) {
-	if(!head) {
-		insertAtHead(d);
-		return;
-	}
-	Node* cur = head;
-	while(cur) {
-		if(cur->data && cur->data->getAddress().getCounty() == co) {
-			Node * n = new Node(d);
-			n->next = cur->next;
-			n->prev = cur;
-			if (cur->next) cur->next->prev = n;
-			else tail=n;
-			cur->next = n;
-			++size;
-			return;
-		}
-		cur = cur->next;
-	}
-	if(!cur){
-		cout<<"No matching county: put at end."<<endl;
-		insertAtTail(d);
-	}
+string Driver::getName() const {
+    return name;
 }
 
-void DriverList::deleteDriver(int DriverID) {
-	string id = to_string(DriverID);
-	Node* cur = head;
-	while(cur) {
-		if (cur->data && cur->data->getDriverID() == id) {
-			if(cur->prev) {
-				cur->prev->next = cur->next;
-			} else {
-				head = cur->next;
-			}
-		if (cur->next) {
-			cur->next->prev = cur->prev;
-		} else {
-			tail = cur->prev;
-		}
-		delete cur;
-		--size;
-		return;
-		}
-		cur = cur-> next;
+void Driver::setYearsExperience(Date e) {
+    experienceYears = e;
+}
+
+Date Driver::getYearsExperience() const {
+	return Date::getAge(Today, licenseIssueDate);
+}
+
+void Driver::setDOB(Date d) {
+    dob = d;
+}
+
+Date Driver::getDOB() const {
+    return dob;
+}
+
+void Driver::setAddress(Address a) {
+    address = a;
+}
+
+Address Driver::getAddress() const {
+    return address;
+}
+
+void Driver::setLicenseIssueDate(Date d) {
+    licenseIssueDate = d;        
+}
+
+Date Driver::getLicenseIssueDate() const {
+    return licenseIssueDate;
+}
+
+void Driver::setTicket(Ticket t) {
+    ticket = t;
+}
+
+Ticket Driver::getTicket() const {
+    return ticket;
+}
+
+void Driver::setTicketStatus(bool t) {
+    hasTicket = t;
+}
+
+bool Driver::getTicketStatus() const {
+    return hasTicket;
+}
+
+void Driver::displayDriver() const {
+	cout<<"Driver ID = "<<getDriverID()<<endl;
+	cout<<"Name = "<<getName()<<endl;
+	cout<<"experienceYears = "<<getYearsExperience()<<endl;
+	cout<<"Date of Birth = "<<dob<<endl;
+	cout<<"Address = "<<getAddress();
+	if(getTicketStatus()){
+		cout<<"Driver has previous ticket, here is last ticket:"<<endl;
+		cout<<ticket <<endl;
+	}else{
+		cout<<"Driver has no tickets."<<endl;
 	}
-}
-
-void DriverList::printRecentN(int n) const {
-	Node* cur = tail;
-	int count = 0;
-	
-	while(cur && count < n) {
-		cout<<n<<": ";
-		cur->data->displayDriver();
-		cout<<endl;
-		cur = cur->prev;
-		count++;
-	}
-}
-
-void DriverList::printOldestN(int n) const {
-	Node* cur = head;
-	int count = 0;
-	
-	while (cur && count < n) {
-		cout<<n<<": ";
-		cur->data->displayDriver();
-		cout<<endl;
-		cur= cur->next;
-		count++;
-	}
-}
-
-Driver* DriverList::searchDriver(int DriverID) {
-	string id = to_string(DriverID);
-	Node* cur = head;
-	while(cur) {
-		if (cur->data && cur->data->getDriverID() == id) {
-			return cur->data;
-		}
-		cur = cur->next;
-	}
-	return nullptr;
-}
-
-void DriverList::printAll() const {
-	Node* cur = head;
-	while (cur) {
-		if(cur->data) {
-			cur->data->displayDriver();
-		}
-		cur = cur -> next;
-	}
-}
-
-Node* DriverList::getHead() const {
-	return head;
-}
-
-int DriverList::getSize() const {
-	return size;
 }

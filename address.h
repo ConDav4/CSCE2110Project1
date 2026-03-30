@@ -21,7 +21,7 @@ class Address {
         string getState() const;
         void setZIP(int z);
         int getZIP() const;
-        ostream& operator<<(ostream& os, const Address& a);
+        friend ostream& operator<<(ostream& os, const Address& a);
 };
 
 #endif

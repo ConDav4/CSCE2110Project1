@@ -57,7 +57,7 @@ int Address::getZIP() const {
     return zip;
 }
 
-ostream& Address::operator<<(ostream& os, const Address& a) {
+ostream& operator<<(ostream& os, const Address& a) {
 	os << a.getStreet() << endl;
 	os << a.getCity() << " " << a.getCounty() << ", " << a.getState() << " " << a.getZIP();
 	return os;

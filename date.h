@@ -16,8 +16,8 @@ class Date {
         int getMonth() const;
         void setDay(int d);
         int getDay() const;
-        ostream& operator<<(ostream& os, const Date& d);
-        Date getAge(Date Today, Date dob);
+        friend ostream& operator<<(ostream& os, const Date& d);
+        static Date getAge(const Date& Today, const Date& dob);
 };
 
 #endif

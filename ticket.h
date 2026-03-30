@@ -3,7 +3,6 @@
 #include "date.h"
 #include "address.h"
 #include <string>
-#include <fstream>
 using namespace std;
 
 class Ticket {
@@ -17,7 +16,7 @@ class Ticket {
         Date getIssueDate() const;
         void setLocation(Address loc);
         Address getLocation() const;
-        ostream& operator<<(ostream& os, const Ticket& t);
+        friend ostream& operator<<(ostream& os, const Ticket& t);
 };
 
 #endif
