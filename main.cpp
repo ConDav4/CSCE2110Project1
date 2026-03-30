@@ -279,10 +279,20 @@
 						getline(ss, licDay, ',');
 						getline(ss, licMonth, ',');
 						getline(ss, licYear, ',');
-		
-						Address addr(street, city, county, state, stoi(zip));
-						Date    dob (stoi(dobDay), stoi(dobMonth), stoi(dobYear));
-						Date    lic (stoi(licDay), stoi(licMonth), stoi(licYear));
+						
+						int zipInt;
+						stringstream(zip) >> zipInt;
+						Address addr(street, city, county, state, zipInt);
+						int dobD, dobM, dobY;
+						stringstream(dobDay) >> dobD;
+						stringstream(dobMonth) >> dobM;
+						stringstream(dobYear) >> dobY;
+						Date    dob (dobD, dobM, dobY);
+						int licD, licM, licY;
+						stringstream(licDay) >> licD;
+						stringstream(licMonth) >> licM;
+						stringstream(licYear) >> licY;
+						Date    lic (licD, licM, licY);
 					
 						Driver* d = new Driver();
 						d->setDriverID(id);
