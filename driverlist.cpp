@@ -119,9 +119,9 @@ void DriverList::printRecentN(int n) const {
 	int count = 0;
 	
 	while(cur && count < n) {
-		cout<<n<<": ";
+		cout << count + 1 << ": ";
 		cur->data->displayDriver();
-		cout<<endl;
+		cout << endl;
 		cur = cur->prev;
 		count++;
 	}
@@ -132,9 +132,9 @@ void DriverList::printOldestN(int n) const {
 	int count = 0;
 	
 	while (cur && count < n) {
-		cout<<n<<": ";
+		cout << count + 1 << ": ";
 		cur->data->displayDriver();
-		cout<<endl;
+		cout << endl;
 		cur= cur->next;
 		count++;
 	}
