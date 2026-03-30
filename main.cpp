@@ -266,19 +266,19 @@
 						string dobDay, dobMonth, dobYear;
 						string licDay, licMonth, licYear;
 			
-						getline(ss, id, ',');
-						getline(ss, name, ',');
-						getline(ss, street, ',');
-						getline(ss, city, ',');
-						getline(ss, county, ',');
-						getline(ss, state, ',');
-						getline(ss, zip, ',');
-						getline(ss, dobDay, ',');
-						getline(ss, dobMonth, ',');
-						getline(ss, dobYear, ',');
-						getline(ss, licDay, ',');
-						getline(ss, licMonth, ',');
-						getline(ss, licYear, ',');
+						getline(ss, id, '\t');
+						getline(ss, name, '\t');
+						getline(ss, street, '\t');
+						getline(ss, city, '\t');
+						getline(ss, county, '\t');
+						getline(ss, state, '\t');
+						getline(ss, zip, '\t');
+						getline(ss, dobDay, '\t');
+						getline(ss, dobMonth, '\t');
+						getline(ss, dobYear, '\t');
+						getline(ss, licDay, '\t');
+						getline(ss, licMonth, '\t');
+						getline(ss, licYear, '\t');
 						
 						int zipInt;
 						stringstream(zip) >> zipInt;
@@ -299,7 +299,7 @@
 						d->setName(name);
 						d->setAddress(addr);
 						d->setDOB(dob);
-						d->setYearsExperience(lic.getAge(Today, lic));
+						d->setYearsExperience(Date::getAge(Today, lic));
 						d->setLicenseIssueDate(lic);
 						db.addDriver(d);
 						++count;
