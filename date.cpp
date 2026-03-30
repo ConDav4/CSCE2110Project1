@@ -37,12 +37,12 @@ int Date::getDay() const {
     return day;
 }
 
-ostream& operator<<(ostream& os, const Date& d) {
+ostream& Date::operator<<(ostream& os, const Date& d) {
     os<<d.month<<"/"<<d.day<<"/"<<d.year;
     return os;
 }
 
-Date getAge(const Date& today, const Date& dob) {
+Date Date::getAge(const Date& today, const Date& dob) {
     int day = today.getDay() - dob.getDay();
     int month = today.getMonth() - dob.getMonth();
     int year = today.getYear() - dob.getYear();
