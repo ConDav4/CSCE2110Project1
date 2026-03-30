@@ -288,7 +288,7 @@
 						getline(ss, tDay, '\t');
 						getline(ss, tMonth, '\t');
 						getline(ss, tYear, '\t');
-						getline(ss, tSteet, '\t');
+						getline(ss, tStreet, '\t');
 						getline(ss, tCity, '\t');
 						getline(ss, tCounty, '\t');
 						getline(ss, tState, '\t');
@@ -315,12 +315,10 @@
 						d->setDOB(dob);
 						d->setYearsExperience(Date::getAge(Today, lic));
 						d->setLicenseIssueDate(lic);
-						db.addDriver(d);
-						++count;
 
 						int hasTicketInt;
 						stringstream(hasTicketStr) >> hasTicketInt;
-						if (hasTicketStr == 1) {
+						if (hasTicketInt == 1) {
 							int tD, tM, tY, tZ;
 							stringstream(tDay) >> tD;
 							stringstream(tMonth) >> tM;
