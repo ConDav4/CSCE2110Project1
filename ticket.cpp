@@ -27,7 +27,7 @@ Address Ticket::getLocation() const {
 }
 
 ostream& Ticket::operator<<(ostream& os, const Ticket& t) {
-    os<< "Issue Date: " <<t.getIssueDate() << endl;
-    os<< "Location: " <<t.getLocation();
+    os<< "Issue Date: " << t.getIssueDate() << endl;
+    os<< "Location: " << t.getLocation();
     return os;
 }
